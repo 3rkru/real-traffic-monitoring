@@ -1,0 +1,29 @@
+graph TB
+    subgraph "Data Collection Layer"
+        A[LoRa Sensors] -->|LoRa Protocol| B[LoRa Gateway]
+        C[Traffic Cameras] --> B
+        D[Weather Sensors] --> B
+        E[Vehicle Sensors] --> B
+    end
+
+    subgraph "Data Processing Layer"
+        B -->|Raw Data| F[LoRa Cloud Platform]
+        F -->|Processed Data| G[Data Analysis Engine]
+        G --> H[Machine Learning Pipeline]
+    end
+
+    subgraph "Application Layer"
+        H --> I[Intelligent Traffic Management System]
+        H --> J[Adaptive Navigation System]
+    end
+
+    subgraph "User Interface Layer"
+        I --> K[Traffic Control Dashboard]
+        J --> L[Mobile Navigation App]
+    end
+
+    subgraph "Integration Layer"
+        I --> M[Signal Management API]
+        I --> N[Smart Parking System]
+        I --> O[Emergency Services Integration]
+    end
